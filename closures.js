@@ -10,11 +10,11 @@ var outer = function(){
 //Invoke outer saving the return value into another variable called 'inner'.
 
   //Code Here
-
+var inner = outer();
 //Once you do that, invoke inner.
 
   //Code Here
-
+inner();
 
 
 //Next problem
@@ -33,11 +33,18 @@ var callFriend = function(){
 //Do what you need to do in order to call your function and get 'Calling Jake at 435-215-9248' in your console.
 
   //Code Here
+var call = callFriend();
+call("423-215-9248");
 
 
 
 //Next Problem
-
+function makeCounter() {
+  var x = 0;
+  return function () {
+    alert(x += 1);
+  };
+}
 
 
 /*
@@ -63,6 +70,20 @@ var callFriend = function(){
 */
 
   //Code Here
+function welcome(greeting){
+  var x = 0;
+  return function(){
+     if(x === 0) {
+       alert ("I ran once");
+      x = 1; } else {
+        alert(greeting());
+       }
+  };
+}
+
+var num = welcome();
+num();
+num();
 
 
 
@@ -73,7 +94,26 @@ var callFriend = function(){
 /*
   Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters. The first parameter will be an anonymous function and the second parameter, 'N', will be a number. Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times. After it's been invoked 'N' number of times, return 'STOP'.
 */
+function foo() {
+  
+}
 
+function fnCounter(fn, num) {
+  var x = 0;
+  return function(){
+    if(num > x ) {
+      alert("I can run");
+      x += 1;
+    } else {alert("Stop");}
+    
+  };
+}
+
+var z = fnCounter(foo, 3);
+z();
+z();
+z();
+z();
 
 
 //Next Problem
@@ -93,11 +133,11 @@ var callFriend = function(){
 
     //Answer Here
 
-
+6000 ms should be the answer
   Now, run the function in your console and note what happpens.
 
   Was your answer right or wrong?
-
+wrong, there was a second delay between counts showing.
     //Answer Here
 
 
@@ -105,7 +145,28 @@ var callFriend = function(){
 */
 
     //Code Here
-
+  var counter = function(){
+    for (var i=1; i<=5; i++) {
+      (function(x){
+        setTimeout( function timer(){
+          console.log( x );
+        }, x*1000 );
+      })(i)
+      
+    }
+    
+    
+    var counter = function(){
+    for (var i=1; i<=5; i++) {
+      var timerFunction = function(x){
+        setTimeout( function timer(){
+          alert( x );
+        }, x*1000 );
+      };
+      timerFunction(i);
+    }
+  };
+ 
 
 
 //Next Problem
