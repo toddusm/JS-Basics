@@ -173,8 +173,15 @@ wrong, there was a second delay between counts showing.
 
 
 
-/*
-  Make the following code work
+
+  //Make the following code work
+function funcArray() {
+  var x = [[0], [1], [2], [3], [4], [5]];
+  }
+  for(var i = 0; i < x.length; i++) {
+    return x[i]
+  }
+}
 
   funcArray[0]() //0
   funcArray[1]() //1
@@ -183,7 +190,25 @@ wrong, there was a second delay between counts showing.
   funcArray[4]() //4
   funcArray[5]() //5
 
-  *Hint: Don't let this fool you. Break down what's really happening here.
+  /*Hint: Don't let this fool you. Break down what's really happening here.
 */
 
 
+function addArrTo() {
+  var x = [];
+  if(x > 6){
+    x.push(x +=1);
+  }
+  return addArrTo[x];
+}
+
+  var funcArray = [];
+
+funcArray = addArrTo();
+
+  funcArray[0](); //0
+  funcArray[1](); //1
+  funcArray[2](); //2
+  funcArray[3](); //3
+  funcArray[4](); //4
+  funcArray[5](); //5
