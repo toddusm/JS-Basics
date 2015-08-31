@@ -70,15 +70,20 @@ function makeCounter() {
 */
 
   //Code Here
-function welcome(greeting){
-  var x = 0;
+function hi() {
+  console.log("hi");
+}
+
+function welcome(){
+  var x = true;
   return function(){
-     if(x === 0) {
-       alert ("I ran once");
-      x = 1; } else {
-        alert(greeting());
-       }
-  };
+     if(x === true) {
+       x = false;
+       return hi();
+       } else {
+        return false;
+  }
+};
 }
 
 var num = welcome();
@@ -102,9 +107,9 @@ function fnCounter(fn, num) {
   var x = 0;
   return function(){
     if(num > x ) {
-      alert("I can run");
+      console.log("I can run");
       x += 1;
-    } else {alert("Stop");}
+    } else {console.log("Stop");}
     
   };
 }
@@ -196,7 +201,7 @@ function funcArray() {
 
 function addArrTo() {
   var x = [];
-  if(x > 6){
+  if(x < 6){
     x.push(x +=1);
   }
   return addArrTo[x];
